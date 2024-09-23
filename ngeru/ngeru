@@ -20,7 +20,7 @@ MySqlscan"
 	fi
 	if [ "$input" = "MySqlscan" ]
 	then
-        ./mysqlscan
+        ./scan.java
     fi
 
 	
