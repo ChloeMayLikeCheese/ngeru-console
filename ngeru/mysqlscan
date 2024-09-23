@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+		echo "Enter the starting IP adress : "
+		read scip
+	
+		echo "Enter the last octet of the last IP adress : "
+		read scipoct
+	
+		echo "Enter the port you want to scan for : "
+		read scport
+	
+		nmap -sT $scip-$scipoct -p $scport >/dev/null -oG MySqlscan
+	
+		cat MySqlscan | grep open > MySqlscan2
+	
+		cat MySqlscan2
+

@@ -1,0 +1,40 @@
+#! /bin/bash
+
+
+packages=("stress" "sl" "vim")
+
+
+check_package_installed() {
+    local package="$1"
+    if yay -l | grep -q "^ii  $package "; then
+        echo "$package is already installed."
+        return 0  
+    else
+        echo "$package is not installed."
+        return 1  
+    fi
+}
+
+
+install_package() {
+    local package="$1"
+    echo "Do you want to install $package? (y/n)"
+    read -r response
+    if [[ "$response" =~ ^[Yy]$ ]]; then
+        yay -S "$package"
+    else
+        echo "Skipping installation of $package."
+    fi
+}
+
+
+echo "Checking for required packages..."
+
+for package in "${packages[@]}"; do
+    if ! check_package_installed "$package"; then
+        install_package "$package"
+    fi
+done
+
+echo "Package check complete."
+

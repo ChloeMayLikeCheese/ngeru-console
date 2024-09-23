@@ -1,0 +1,71 @@
+#!/bin/bash
+
+echo " ／l、"
+echo "（ﾟ､ ｡７"
+echo "l、ﾞ~ヽ"
+echo "じしf_, )ノ "
+echo "Nau mai ki Ngeru!"
+echo "Tuhinga 'help' mo rārangi o whakahau"
+
+x=1
+while [ $x = 1 ] 
+do 
+	read comVar
+	if [ "$comVar" = ":3" ]
+	then
+		echo "meow x3"
+	
+	fi
+
+	if [ "$comVar" = "help" ]
+	then
+		echo "help,
+MySqlscan"
+	
+	fi
+
+	if [ "$comVar" = "MySqlscan" ]
+	then
+		echo "Tomo te timata IP wāhitau : "
+		read scip
+	
+		echo "Tomo te mutunga octet o te IP wāhitau : "
+		read scipoct
+	
+		echo "Enter the port you want to scan for : "
+		read scport
+	
+		nmap -sT $scip-$scipoct -p $scport >/dev/null -oG MySqlscan
+	
+		cat MySqlscan | grep open > MySqlscan2
+	
+		cat MySqlscan2
+	fi
+
+	if [ "$comVar" = "superCoolHaxWowAmazingHackingIntoTheMainframe" ]
+	then
+		cat /dev/random
+	fi
+	
+	if [ "$comVar" = "alex is stoopid" ]
+	then
+		echo "agreed"
+	fi
+	
+	if [ "$comVar" = "r-r" ]
+	then
+		echo "waimarie pai!"
+		randnum=$((1 + RANDOM % 8))
+		echo $randnum
+	fi
+	
+	if [ $randnum -eq 1 ]
+	then
+		crash
+	fi
+	
+	if [ "$comVar" = "mao" ]
+	then
+		ngeru-mao
+	fi
+done

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+echo " ／l、"
+echo "（ﾟ､ ｡７"
+echo "l、ﾞ~ヽ"
+echo "じしf_, )ノ "
+echo "Welcome to Ngeru!"
+echo "Type 'help' for list of commands "
+
+x=1
+while [ $x = 1 ] 
+do 
+	read input
+
+	if [ "$input" = "help" ]
+	then
+		echo "help,
+MySqlscan"
+	
+	fi
+	if [ "$input" = "MySqlscan" ]
+	then
+        ./mysqlscan
+    fi
+
+	
+
+	
+	if [ "$input" = "r-r" ]
+	then
+		echo "good luck!"
+		randnum=$((1 + RANDOM % 8))
+		echo $randnum
+	fi
+	
+	if [ "$randnum" = 1 ]
+	then
+		./crash
+	fi
+	
+	if [ "$input" = "mao" ]
+	then
+		./ngeru-mao
+	fi
+    if [ "$input" = "windows_mp" ]
+	then
+		./windows_meterpreter
+	fi
+done
