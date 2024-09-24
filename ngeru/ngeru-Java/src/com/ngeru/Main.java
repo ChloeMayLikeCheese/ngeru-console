@@ -9,7 +9,7 @@ public class Main {
         System.out.println("  ／l、\n（ﾟ､ ｡７\n l、ﾞ~ヽ\n じしf_, )ノ \n");
 
 
-//      Create scanner333
+//      Create scanner
         Scanner scanner = new Scanner(System.in);
 //      while loop for the input prompt and switch statement
         while (true) {
