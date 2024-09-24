@@ -19,14 +19,14 @@ public class Main {
             String input = scanner.next().toLowerCase();
 
 //          Strings needed for commands
-            String scriptPath = "/home/chloe/Documents/java project/ngeru-console/ngeru/windows_meterpreter";
+            String scriptPath = "ngeru/ngeru-Java/src/com/ngeru/windows_meterpreter";
 
 //          Switch statement for input
             switch (input) {
                 case "help":
                     System.out.println("help - Display Information On Commands\nwmeterpretr - Windows Meterpeter shell via MSF");
                     break;
-                case "test2":
+                case "wmeterpreter":
                     BashScriptRunner runner = new BashScriptRunner(scriptPath);
                     runner.runScript();
                     break;
