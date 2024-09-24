@@ -18,13 +18,17 @@ public class Main {
 //          Convert input to lower case
             String input = scanner.next().toLowerCase();
 
+//          Strings needed for commands
+            String scriptPath = "/home/chloe/Documents/java project/ngeru-console/ngeru/windows_meterpreter";
+
 //          Switch statement for input
             switch (input) {
                 case "help":
                     System.out.println("help - Display Information On Commands\n2");
                     break;
                 case "test2":
-                    System.out.println("test2");
+                    BashScriptRunner runner = new BashScriptRunner(scriptPath);
+                    runner.runScript();
                     break;
 
 

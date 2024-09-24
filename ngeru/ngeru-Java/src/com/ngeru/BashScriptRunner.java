@@ -19,14 +19,14 @@ public class BashScriptRunner {
         try {
             Process process = processBuilder.start(); // Start the process
 
-            // Read the output from the command
+            // read the output from the command
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
 
-            // Wait for the process to finish
+            // wait for the process to finish
             int exitCode = process.waitFor();
             System.out.println("Process exited with code: " + exitCode);
         } catch (IOException | InterruptedException e) {
@@ -34,3 +34,14 @@ public class BashScriptRunner {
         }
     }
 }
+
+//public class Main {
+//    public static void main(String[] args) {
+//        // Specify the path to your Bash script
+//        String scriptPath = "./script.sh";
+//
+//        // Create an instance of BashScriptRunner and run the script
+//        BashScriptRunner runner = new BashScriptRunner(scriptPath);
+//        runner.runScript();
+//    }
+//}
