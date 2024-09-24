@@ -24,7 +24,7 @@ public class Main {
 //          Switch statement for input
             switch (input) {
                 case "help":
-                    System.out.println("help - Display Information On Commands\n2");
+                    System.out.println("help - Display Information On Commands\nwmeterpretr - Windows Meterpeter shell via MSF");
                     break;
                 case "test2":
                     BashScriptRunner runner = new BashScriptRunner(scriptPath);
